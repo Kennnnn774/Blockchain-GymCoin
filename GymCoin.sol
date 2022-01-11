@@ -14,10 +14,11 @@ contract GymCoin {
     }
 
     mapping(address => User) public Users;
+    User [] UserList;
     bytes32 [] userIDs;
 
-    constructor(bytes32 memory userid, bytes32[] memory deviceIDs, uint memory balance, bytes32[] memory contractIDs) {
-        Users.push(User({
+    constructor(bytes32 userid, bytes32[] memory deviceIDs, uint balance, bytes32[] memory contractIDs) {
+        UserList.push(User({
             userID: userid,
             deviceID: deviceIDs,
             balance: balance,
@@ -31,7 +32,7 @@ contract GymCoin {
     //     User storage sender = Users[msg.sender];
     //     // require(!sender.voted, "Already voted.");
     //     sender.balance -= amount; // Could be negative
-    //     userIDs
+    //     userIDs[user2];
     // }
 
     function signContract(bytes32 userID, bytes32 contractID) public {
@@ -52,12 +53,12 @@ contract token {
     /* Initializes contract with initial supply tokens to the creator of the contract */
     function token(uint numCoinTypes, uint supply) {
         for (uint k=0; k<numCoinTypes; ++k) {
-        coinBalanceOf[k][msg.sender] = supply;
+            coinBalanceOf[k][msg.sender] = supply;
         }
     }
 
     /* Very simple trade function */
-    function sendCoin(uint coinType, address receiver, uint amount) returns(bool sufficient) {
+    function sendCoin(uint coinType, address receiver, uint amount) public returns (bool sufficient) {
         if (coinBalanceOf[coinType][msg.sender] < amount) return false;
 
         coinBalanceOf[coinType][msg.sender] -= amount;
