@@ -13,13 +13,13 @@ contract GymCoin {
         bytes32[] contractID; // List of contracts signed
     }
 
-    mapping(address => User) public Users;
+    mapping(address => User) public Users;      //TODO: after mapping address to User, what does Users do?
     User [] UserList;
     bytes32 [] userIDs;
 
     constructor(bytes32 userid, bytes32[] memory deviceIDs, uint balance, bytes32[] memory contractIDs) {
         UserList.push(User({
-            userID: userid,
+            userID: userid,         //TODO: don't we technically just need user's address to transact to make it actually on a blockchain?
             deviceID: deviceIDs,
             balance: balance,
             contractID: contractIDs
@@ -51,7 +51,7 @@ contract token {
     event CoinTransfer(uint coinType, address sender, address receiver, uint amount);
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
-    function token(uint numCoinTypes, uint supply) {
+    function tokenSupply(uint numCoinTypes, uint supply) public { //
         for (uint k=0; k<numCoinTypes; ++k) {
             coinBalanceOf[k][msg.sender] = supply;
         }
@@ -64,7 +64,7 @@ contract token {
         coinBalanceOf[coinType][msg.sender] -= amount;
         coinBalanceOf[coinType][receiver] += amount;
 
-        CoinTransfer(coinType, msg.sender, receiver, amount);
+        emit CoinTransfer(coinType, msg.sender, receiver, amount);
 
         return true;
     }
