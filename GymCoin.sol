@@ -7,6 +7,16 @@ pragma solidity >=0.7.0 <0.9.0;
 
 
 contract GymCoin {
+    User public minter;
+    uint supply;
+
+    event Transfer(address from, address to, uint amount);
+    event Approval(address owner, address spender, uint amount);
+
+    constructor() {
+        uint[] memory deviceIDs;
+        Register("minter", deviceIDs);
+    }
 
     struct Exercise {
         bytes32 userID;   // Short name (up to 32 bytes)
@@ -23,6 +33,8 @@ contract GymCoin {
         bool registered; // true means one has already registered and cannot add_user again
         uint timeSigned; // The baseline time of signing one Contract
         // DateTime time;
+        mapping(address => uint) approved; //Approved spenders and their limits
+        mapping(address => uint) approvedBy; //Users who approved this user and the limits
     }
 
     struct Post { // Could also do Like System
@@ -35,6 +47,24 @@ contract GymCoin {
 
     mapping(address => User) public Users;
     Post[] public Posts;
+
+    function totalSupply() public view returns (uint) {
+        return supply;
+    }
+
+    function balanceOf(address owner) public view returns (uint) {
+        return Users[owner].balance;
+    }
+
+    function allowance(address owner, address spender) public view returns (uint) {
+        return Users[spender].approvedBy[owner];
+    }
+
+    function mint(address receiver, uint amount) public {
+        require(Users[msg.sender].userID == minter.userID);
+        Users[receiver].balance += amount;
+        supply += amount;
+    }
 
     function Register(bytes32 userid, uint [] memory deviceIDs) public {
         User storage sender = Users[msg.sender];
@@ -68,6 +98,7 @@ contract GymCoin {
         require(Contain == true, "Must use the correct device");
 
         sender.balance += reward(heartrate1, workout_time1, calories1);
+        supply += reward(heartrate1, workout_time1, calories1);
     }
 
     function reward(uint heartrate1, uint workout_time1, uint calories1) private pure returns(uint earned){
@@ -79,15 +110,37 @@ contract GymCoin {
 // [1, 2, 3]
 // 0x0000000000000000000000000000000000000000000000000000000061626365
 
-    function exchange(address user2, uint amount) public {
-        User storage sender = Users[msg.sender];
-        require(sender.registered == true, "You have not registered.");
+    function transfer(address receiver, uint amount) public returns (bool) {
+        require(Users[msg.sender].registered && Users[receiver].registered, "Both users must be registered.");
 
-        require(sender.balance >= amount);
+        require(Users[msg.sender].balance >= amount, "Insufficient balance.");
         require(amount >= 0);
-        
-        sender.balance -= amount;
-        Users[user2].balance += amount;
+
+        Users[msg.sender].balance -= amount;
+        Users[receiver].balance += amount;
+        emit Transfer(msg.sender, receiver, amount);
+        return true;
+    }
+
+    function approve(address spender, uint amount) public returns (bool) {
+        Users[msg.sender].approved[spender] = amount;
+        Users[spender].approvedBy[msg.sender] = amount;
+        emit Approval(msg.sender, spender, amount);
+        return true;
+    }
+
+    function transferFrom(address owner, address receiver, uint amount) public returns (bool){
+        require(Users[owner].approved[msg.sender] >= 0);
+        require(Users[owner].balance >= amount, "Insufficient balance.");
+        require(amount >= 0);
+
+        Users[owner].approved[msg.sender] -= amount;
+        Users[msg.sender].approvedBy[owner] -= amount;
+
+        Users[owner].balance -= amount;
+        Users[receiver].balance += amount;
+        emit Transfer(msg.sender, receiver, amount);
+        return true;
     }
 
     function add_post(bytes32 userid, string memory context, uint time) public {
