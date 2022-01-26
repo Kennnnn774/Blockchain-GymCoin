@@ -13,10 +13,10 @@ contract GymCoin {
     event Transfer(address from, address to, uint amount);
     event Approval(address owner, address spender, uint amount);
 
-    constructor() {
-        uint[] memory deviceIDs;
-        Register("minter", deviceIDs);
-    }
+    // constructor() {
+    //     uint[] memory deviceIDs;
+    //     Register("minter", deviceIDs);
+    // }
 
     struct Exercise {
         bytes32 userID;   // Short name (up to 32 bytes)
@@ -60,11 +60,11 @@ contract GymCoin {
         return Users[spender].approvedBy[owner];
     }
 
-    function mint(address receiver, uint amount) public {
-        require(Users[msg.sender].userID == minter.userID);
-        Users[receiver].balance += amount;
-        supply += amount;
-    }
+    // function mint(address receiver, uint amount) public {
+    //     require(Users[msg.sender].userID == minter.userID);
+    //     Users[receiver].balance += amount;
+    //     supply += amount;
+    // }
 
     function Register(bytes32 userid, uint [] memory deviceIDs) public {
         User storage sender = Users[msg.sender];
@@ -143,12 +143,11 @@ contract GymCoin {
         return true;
     }
 
-    function add_post(bytes32 userid, string memory context, uint time) public {
+    function add_post(string memory context) public {
         User storage user_sender = Users[msg.sender];
         require(user_sender.registered == true, "You have not registered.");
-        require(user_sender.userID == userid, "You must post for yourself");
-
-        Posts.push( Post(userid, context, time) );
+        // require(user_sender.userID == userid, "You must post for yourself");
+        Posts.push(Post(user_sender.userID,context, block.timestamp) );
     }
 
 
@@ -164,14 +163,31 @@ contract GymCoin {
         string [] memory curr_posts = new string [](5);
         uint [] memory curr_posts_time = new uint [](5);
 
+        require(Posts.length >= 1, "GG. No post!!");
+        //pre-process
+        curr_posts[0] = "Empty";
+        curr_posts_time[0] = block.timestamp;
         // try catch
-        for (uint i = Posts.length-1; i > 0; i--) {
+        uint count = 0;
+        for (uint i = Posts.length - 1; i > 0; i--) {
             if (userid == Posts[i].userID) {
-                curr_posts[i] = Posts[i].context;
-                curr_posts_time[i] = Posts[i].time;
+                curr_posts[count] = Posts[i].context;
+                curr_posts_time[count] = Posts[i].time;
+                count ++;
+                if (count == 5){
+                    return (curr_posts, curr_posts_time);
+                }
             }
         }
         return (curr_posts, curr_posts_time);
+
+        // for (uint i = Posts.length - 1; i >= 0; i--) {
+        //     if (userid == Posts[i].userID) {
+        //         curr_posts[i - Posts.length + 5] = Posts[i].context;
+        //         curr_posts_time[i- Posts.length + 5] = Posts[i].time;
+        //     }
+        // }
+        // return (curr_posts, curr_posts_time);
     }
 
 
