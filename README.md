@@ -1,5 +1,10 @@
 # Blokchain-GymCoin
 
+## Visual Presentation Checkpoint
+Our UI website: http://dsc180a03_gymcoin.surge.sh/ -- It covers our project White Paper, __User Interaction Interface (Deploy)__ and User Instruction pages.
+
+The template and front-end code are collected at this repo: https://github.com/Kennnnn774/Gym-Coin-Website
+
 ### Abstract
 
 Nowadays, physical fitness and bodybuilding have become unprecedentedly popular. While it is usually easy for people to start doing exercises, one may find it difficult to persevere. There are many factors that lead to this phenomenon, including busy schedules, intense training plans, no workout buddies, etc. All these factors gradually lead to a loss in motivation, causing people to become more reluctant, and eventually stop working out completely. Even though pre-workout products can relieve this unwillingness, its effect is temporary and can lead to dependence on the product. With the development of technology and the global market, blockchain technology and cryptocurrency came with it and inspired us to develop a blockchain-based application that incorporates exercising, entertainment, and socialization through the implementation of a platform that rewards users for staying fit and active. By creating such a platform that targets people’s demand for personalized socializing and motivation for exercising, we expect to promote a healthy lifestyle, the growth of the gym industry, and a way for people into fitness to socialize.
