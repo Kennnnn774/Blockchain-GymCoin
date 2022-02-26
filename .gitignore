@@ -1,0 +1,4 @@
+node_modules/
+Chainlink-External-Adapter/.env
+Chainlink-External-Adapter/node_modules/
+Chainlink-External-Adapter/package-lock.json
