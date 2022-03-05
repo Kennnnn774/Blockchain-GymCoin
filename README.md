@@ -1,7 +1,7 @@
 # Blokchain-GymCoin
 
-## Visual Presentation Checkpoint
-Our UI website: http://dsc180a03_gymcoin.surge.sh/ -- It covers our project White Paper, __User Interaction Interface (Deploy)__ and User Instruction pages.
+## Main Page
+Our Main website: http://dsc180a03_gymcoin.surge.sh/ -- It covers our project White Paper, User Instruction, User Interaction Interface (Deploy), and Wallet.
 
 The template and front-end code are collected at this repo: https://github.com/Kennnnn774/Gym-Coin-Website
 
