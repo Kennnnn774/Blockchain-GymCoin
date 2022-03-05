@@ -33,10 +33,10 @@ Scaffold-ETH: a good visualization tool for smart contracts with diverse methods
 - Get GymCoins for a certain amount of Calories, with a daily limit of 10 GymCoins.
 - GymCoins can be transferred and have no amount limit.
 - Multiple applications:
-- Layered Plans for cash bonus:
-- Get 5 extra coins for 25 GymCoin per week and 3 penalty
-- Get 7 extra coins for 30 GymCoin per week and 4 penalty
-- Get 9 extra coins for 35 GymCoin per week and 5 penalty
+  - Layered Plans for cash bonus:
+    - Get 5 extra coins for 25 GymCoin per week and 3 penalty
+    - Get 7 extra coins for 30 GymCoin per week and 4 penalty
+    - Get 9 extra coins for 35 GymCoin per week and 5 penalty
 
 Post about your exercise experience and share with your friends!
 
