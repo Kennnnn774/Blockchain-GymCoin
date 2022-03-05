@@ -15,6 +15,7 @@ The idea is that our users can connect to their smart devices like watches/rings
 
 Data storage and management as well as the trading process will be done on the Ethereum blockchain using Solidity and the User Interface will be derived from the Scaffold-ETH application. We expect this integrated platform to promote the circulation of GymCoin within its community and increase GymCoins’ value through interactions. With the rise of fitness tech and the gradual maturity of blockchain technology, we expect GymCoin to bridge the two markets.
 
+![alt text](https://github.com/feifanjasmineguan/Blockchain-GymCoin/blob/main/readme_imgs/trend.png)
 
 
 ### 2. Core Concept
@@ -39,6 +40,7 @@ Scaffold-ETH: a good visualization tool for smart contracts with diverse methods
 
 Post about your exercise experience and share with your friends!
 
+![alt text](https://github.com/feifanjasmineguan/Blockchain-GymCoin/blob/main/readme_imgs/workflow.png)
 
 
 ### 4. GymCoin Usage
