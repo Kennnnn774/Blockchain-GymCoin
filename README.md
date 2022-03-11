@@ -18,6 +18,34 @@ Data storage and management as well as the trading process will be done on the E
 ![alt text](https://github.com/feifanjasmineguan/Blockchain-GymCoin/blob/main/readme_imgs/trend.png)
 
 
+### 3. Why (GymCoin on) Blockchain
+#### Incentive Reward System
+- GymCoin is a sustainable incentive system that rewards exercise 
+  - The incentive is so far monetary, but can also be expanded to others
+  - Similar concept can be applied to any currently not rewarded activities such as public service
+- Due to proof of work and immutability, the incentive won’t be tampered with
+- GymCoin as Fungible Token (ERC20): can be exchanged among users
+- Characters as Non-Fungible Token (ERC721): unique digital identifier that can’t be exchanged for similar kinds
+ 
+It serves as vending machines, with secure transactions, lower compliance costs, and higher transaction speed.
+- Authentic transaction verified and confirmed by participants:
+  - Transactions can only go through if it’s verified by all parties involved
+- Immutable transactions:
+  - One a transaction goes through, it can’t be altered or deleted
+- Decentralized data with no fee required:
+  - Users directly interact with each other through addresses without the need to go through intermediary parties
+- Non-intermediary rewards for producers:
+  - No transaction or commission fee generated since no intermediary 
+#### Feasibility – competitive among other decentralized industrial projects.
+- Banking/Fintech
+- Healthcare/Insurance
+- Supply Chain Management
+- Gaming
+#### Traceability 
+– efficient contract management and data query.
+
+
+
 ### 2. Core Concept
 Users: the core of GymCoin. We focus on the quantity and quality of users and strive to add socio-economic values to our users by implementing an interactive platform to motivate users and as well as smart contracting for monetary incentive. There are naturally two types of users—producers and consumers. A consumer is one that participates in daily work-outs, purchases gym tutorials, exchanges for GymCoin rewards, claims ownership to interesting collections of images, and interacts with others. A producer is one that trades GymCoins or shares his exercise experience and expertise with the exchange of GymCoins. 
 
