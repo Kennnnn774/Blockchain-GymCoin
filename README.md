@@ -1,4 +1,4 @@
-# Blokchain-GymCoin
+# Blockchain-GymCoin
 
 ## Main Page
 Our Main website: http://dsc180a03_gymcoin.surge.sh/ -- It covers our project White Paper, User Instruction, User Interaction Interface (Deploy), and Wallet.
