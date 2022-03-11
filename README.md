@@ -18,7 +18,7 @@ Data storage and management as well as the trading process will be done on the E
 ![alt text](https://github.com/feifanjasmineguan/Blockchain-GymCoin/blob/main/readme_imgs/trend.png)
 
 
-### 3. Why (GymCoin on) Blockchain
+### 2. Why (GymCoin on) Blockchain
 #### Incentive Reward System
 - GymCoin is a sustainable incentive system that rewards exercise 
   - The incentive is so far monetary, but can also be expanded to others
@@ -41,12 +41,12 @@ It serves as vending machines, with secure transactions, lower compliance costs,
 - Healthcare/Insurance
 - Supply Chain Management
 - Gaming
-#### Traceability 
-– efficient contract management and data query.
+#### Traceability
+- efficient contract management and data query.
 
 
 
-### 2. Core Concept
+### 3. Core Concept
 Users: the core of GymCoin. We focus on the quantity and quality of users and strive to add socio-economic values to our users by implementing an interactive platform to motivate users and as well as smart contracting for monetary incentive. There are naturally two types of users—producers and consumers. A consumer is one that participates in daily work-outs, purchases gym tutorials, exchanges for GymCoin rewards, claims ownership to interesting collections of images, and interacts with others. A producer is one that trades GymCoins or shares his exercise experience and expertise with the exchange of GymCoins. 
 
 Smart Contracts: a monetary incentive to users, rewarding users with GymCoins and cash. We developed layered plans for cash bonuses catered to different needs of our users (Specified later).
@@ -56,7 +56,7 @@ Scaffold-ETH: a good visualization tool for smart contracts with diverse methods
 
 
 
-### 3. GymCoin Mechanism
+### 4. GymCoin Mechanism
 - Access smart devices like watches/rings or running machines, choose your own type of exercise, and trace your heart rate & time for Calories.
 - ERC-20 compliant
 - Get GymCoins for a certain amount of Calories, with a daily limit of 10 GymCoins.
@@ -71,7 +71,7 @@ Post about your exercise experience and share with your friends!
 
 ![alt text](https://github.com/feifanjasmineguan/Blockchain-GymCoin/blob/main/readme_imgs/workflow.png)
 
-### 4. FitBit Integration
+### 5. FitBit Integration
 Tracking user heartrates can be done using a FitBit device in which the user allows the GymCoin application to access their FitBit account's profile, devices, activities, and heartrate. The GymCoin application is designed to receive user data through OAuth 2.0 with PKCE for the most secure authorization flow. User data such as calories and heartrate can then be accessed by making a request to the GymCoin API server which makes the proper request to the FitBit API.
 
 Example of a request which returns calorie activity:
@@ -84,11 +84,11 @@ The GymCoin API can then interact with the Ethereum blockchain as a Chainlink ex
 ![alt text](https://github.com/feifanjasmineguan/Blockchain-GymCoin/blob/main/readme_imgs/fitbit_oauth.png)
 
 
-### 5. GymCoin Usage
+### 6. GymCoin Usage
 In the NFT platform, we would like to create multiple interesting collections with different topics which can be claimed by users with a certain amount of GymCoins and user-levels. The collections would be limited and can be transferred among users. We hope to bring interesting images as well as those with social responsibilities to our users and increase the socio-economic value of them.
 
 In the gaming platform, users can exchange GymCoins to customize their personal avatar with things like clothes, accessories, shoes, glasses, bags, etc. We will also include mechanisms to change  their physical appearance such as height, muscles, body fat, haircut, facial expressions, etc. Based on their involvement, users can increase their character level and unlock more friend connections and users to play with. Further down the line, we will also implement emotes and other methods of interaction. With these social interactions in place, socialization and communication between GymCoin users is promoted as well as the circulation of GymCoins.
 
 
-### 6. Rewards System & Proof of Work
+### 7. Rewards System & Proof of Work
 In order to connect to the GymCoin platform, users are required to connect to smart devices and select the corresponding exercise. Using Apple Watches as an example, it will automatically calculate calories burnt through the user's heart rate. This is also our mechanism to make sure users don’t cheat since their heart rate can not be easily imitated by machines. With the guidance of health experts, we will determine the exchange rate between calories burnt and GymCoins. Once users exchange GymCoins from calories burnt, they can exchange them for cash through the use of smart-contracts or use them directly in the GymCoin social gaming platform. Also, users are recommended to use MetaMask as their interface to connect to our application website, which allows them to keep track of their behavior and double check their identities at each step with a high level of security.
